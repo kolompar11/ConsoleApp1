@@ -8,7 +8,6 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Hello, World!");
         }
-
         static void F2()
         {
             Console.Write("Add meg a neved: ");
@@ -128,21 +127,71 @@ namespace ConsoleApp1
         }
         static void F9()
         {
-            Console.Write("Add meg az első együtthatót");
+            Console.Write("Add meg az első együtthatót: ");
             double a = double.Parse (Console.ReadLine()!);
 
-            Console.Write("Add meg a második együtthatót");
+            Console.Write("Add meg a második együtthatót: ");
             double b = double.Parse(Console.ReadLine()!);
 
-            Console.Write("Add meg a harmadik együtthatót");
+            Console.Write("Add meg a harmadik együtthatót: ");
             double c = double.Parse(Console.ReadLine()!);
 
-            if 
-        }
+            double d = b * b - 4 * a * c;
 
+            if (d > 0)
+            {
+                double x1 = (-b + Math.Sqrt(d)) / (2 * a);
+                double x2 = (-b - Math.Sqrt(d)) / (2 * a);
+                Console.WriteLine($"Két valós gyök van: x1 = {x1}, x2 ={x2}");
+            }
+            else if (d == 0)
+            {
+                double x = -b / (2 * a);
+                Console.WriteLine($"Egy valós gyök van: x = {x}");
+            }
+            else
+            {
+                Console.WriteLine("Nincs valós megoldás.");
+            }
+        }
+        static void F10()
+        {
+            Console.Write("Add meg az első együtthatót: ");
+            double a = double.Parse(Console.ReadLine()!);
+
+            Console.Write("Add meg a második együtthatót: ");
+            double b = double.Parse(Console.ReadLine()!);
+
+            Console.Write("Add meg a harmadik együtthatót: ");
+            double c = double.Parse(Console.ReadLine()!);
+
+            double d = b * b - 4 * a * c;
+
+            if (d > 0)
+            {
+                double x1 = (-b + Math.Sqrt(d)) / (2 * a);
+                double x2 = (-b - Math.Sqrt(d)) / (2 * a);
+                Console.WriteLine($"Két valós gyök van: x1 = {x1}, x2 ={x2}");
+            }
+            else if (d == 0)
+            {
+                double x = -b / (2 * a);
+                Console.WriteLine($"Egy valós gyök van: x = {x}");
+            }
+        }
+        static void F11()
+        {
+            Console.WriteLine("Add meg a derékszögű háromszög egyik befogóját: ");
+            int a = int.Parse(Console.ReadLine()!);
+
+            Console.Write("Add meg a derékszögű háromszög másik befogójátt: ");
+            int b = int.Parse(Console.ReadLine() !);
+            double c = Math.Sqrt(a * a + b * b);
+            Console.WriteLine($"Az átfogó hossza: {c}");
+        }
         static void Main(string[] args) 
         {
-            F8();
+            F9();
         }
     }
 }
