@@ -189,9 +189,78 @@ namespace ConsoleApp1
             double c = Math.Sqrt(a * a + b * b);
             Console.WriteLine($"Az átfogó hossza: {c}");
         }
+        static void F12()
+        {
+            Console.Write("Add meg a téglatest első élének hosszát: ");
+            double a = double.Parse(Console.ReadLine()!);
+
+            Console.Write("Add meg a téglatest második élének hosszát: ");
+            double b = double.Parse(Console.ReadLine()!);
+
+            Console.Write("Add meg a téglatest harmadik élének hosszát: ");
+            double c = double.Parse(Console.ReadLine()!);
+
+            double felszin = 2 * (a * b + a * c + b * c);
+            double terfogat = a * b * c;
+
+            Console.WriteLine($"A téglatest felszíne: {felszin}");
+            Console.WriteLine($"A téglatest térfogata: {terfogat}");
+        }
+        static void F13()
+        {
+            {
+                Console.Write("Add meg a kör átmérőjét: ");
+                double d = double.Parse(Console.ReadLine()!);
+
+                double kerulet = Math.PI * d;
+                double sugar = d / 2;
+                double terulet = Math.PI * sugar * sugar;
+
+                Console.WriteLine($"A kör kerülete: {kerulet}");
+                Console.WriteLine($"A kör területe: {terulet}");
+            }
+        }
+        static void F14()
+        {
+            Console.Write("Add meg a körív sugarát: ");
+            double r = double.Parse(Console.ReadLine()!);
+
+            Console.Write("Add meg a középponti szöget: ");
+            double szog = double.Parse(Console.ReadLine()!);
+
+            double ivHossz = 2 * Math.PI * r * (szog / 360);
+            double terulet = Math.PI * r * r * (szog / 360);
+
+            Console.WriteLine($"A határoló ív hossza: {ivHossz}");
+            Console.WriteLine($"A körívhez tartozó körcikk területe: {terulet}");
+        }
+        static void F15()
+        {
+            Console.Write("Adj meg egy pozitív egész számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.Write(i);
+                if (i < n)
+                    Console.Write(" ");
+            }
+        }
+        static void F16()
+        {
+            Console.Write("Adj meg egy pozitív egész számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine(i);
+              
+            }
+        }
+
         static void Main(string[] args) 
         {
-            F9();
+            F16();
         }
     }
 }
