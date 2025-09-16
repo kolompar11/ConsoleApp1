@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 
 namespace ConsoleApp1
 {
@@ -6,7 +7,7 @@ namespace ConsoleApp1
     {
         static void F1()
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Hello world!");
         }
         static void F2()
         {
@@ -184,9 +185,9 @@ namespace ConsoleApp1
             Console.WriteLine("Add meg a derékszögű háromszög egyik befogóját: ");
             int a = int.Parse(Console.ReadLine()!);
 
-            Console.Write("Add meg a derékszögű háromszög másik befogójátt: ");
+            Console.Write("Add meg a derékszögű háromszög másik befogóját: ");
             int b = int.Parse(Console.ReadLine() !);
-            double c = Math.Sqrt(a * a + b * b);
+            double c = Math.Round(Math.Sqrt(Math.Pow(a, 2) + Math.Pow(b, 2)), 2);
             Console.WriteLine($"Az átfogó hossza: {c}");
         }
         static void F12()
@@ -208,17 +209,17 @@ namespace ConsoleApp1
         }
         static void F13()
         {
-            {
-                Console.Write("Add meg a kör átmérőjét: ");
-                double d = double.Parse(Console.ReadLine()!);
+            
+            Console.Write("Add meg a kör átmérőjét: ");
+            double d = double.Parse(Console.ReadLine()!);
 
-                double kerulet = Math.PI * d;
-                double sugar = d / 2;
-                double terulet = Math.PI * sugar * sugar;
+            double kerulet = Math.PI * d;
+            double sugar = d / 2;
+            double terulet = Math.PI * sugar * sugar;
 
-                Console.WriteLine($"A kör kerülete: {kerulet}");
-                Console.WriteLine($"A kör területe: {terulet}");
-            }
+            Console.WriteLine($"A kör kerülete: {kerulet}");
+            Console.WriteLine($"A kör területe: {terulet}");
+            
         }
         static void F14()
         {
@@ -257,10 +258,43 @@ namespace ConsoleApp1
               
             }
         }
+        static void F17()
+        {
+            Console.Write("Adj meg egy pozitív egész számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                {
+                   Console.WriteLine($"A szám osztói: {i}");
+                }
+            }
+        }
+        static void F18() 
+        {
+            Console.Write("Adj meg egy pozitív egész számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+            int sum = 0;
+            for (int i = 1; i <= n; i++)
+            {
+                if (n % i == 0)
+                { 
+                    sum += i;
+                }
+            }
+            Console.WriteLine($"A szám osztóinak összege: {sum}");
+        }
+        static void F19()
+        {
+            Console.Write("Adj meg egy pozitív egész számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+
+            for (int i = 1; i <=);
+        }
 
         static void Main(string[] args) 
         {
-            F16();
+            F17();
         }
     }
 }
