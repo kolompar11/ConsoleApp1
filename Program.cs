@@ -476,11 +476,34 @@ namespace ConsoleApp1
             }
 
         }
+        static void F28()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+
+            Console.Write("Prím osztók: ");
+            for (int i = 2; i <= n; i++)
+            {
+                bool isPrime = true;
+                for (int szam = 2; szam <= Math.Sqrt(i); szam++)
+                {
+                    if (i % szam == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime && n % i == 0)
+                {
+                    Console.Write($"{i} ");
+                }
+            }
+        }
 
 
         static void Main(string[] args) 
         {
-            F27();
+            F28();
         }
     }
 }
