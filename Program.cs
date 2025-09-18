@@ -448,9 +448,24 @@ namespace ConsoleApp1
                 Console.WriteLine("Nem prímszám!");
             }
         }
+        static void F27()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+
+            bool isPrime = true;
+            for (int i = 2; i <= Math.Sqrt(n); i++)
+            {
+                if (n % i == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+        }
         static void Main(string[] args) 
         {
-            F26();
+            F27();
         }
     }
 }
