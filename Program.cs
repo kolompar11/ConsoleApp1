@@ -499,11 +499,169 @@ namespace ConsoleApp1
                 }
             }
         }
+        static void F29()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine()!);
 
+            if (szam < 1)
+            {
+                Console.WriteLine("A számnak nincsenek prímosztói!");
+                return;
+            }
+            Console.Write($"Prímosztók: {szam} ");
+            for (int i = 2; i <= szam; i++)
+            {
+                bool isPrime = true;
+                for (int oszto = 2; oszto <= Math.Sqrt(i); oszto++)
+                {
+                    if (i % oszto == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
+                }
+                if (isPrime && szam % i == 0)
+                {
+                    Console.Write($"* {i} ");
+                    szam /= i;
+                    i--;
+                }
+            }
+        }
+        static void F30()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine()!);
+
+            Console.Write("Adj meg egy másik számot: ");
+            int szam2 = int.Parse(Console.ReadLine()!);
+
+            for (int i = Math.Min(szam, szam2); i >= 2; i--)
+            {
+                if (szam % i == 0 && szam2 % i == 0)
+                {
+                    Console.WriteLine($"A legnagyobb közös osztó: {i}");
+                    return;
+                }
+            }
+        }
+        static void F31()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine()!);
+
+            Console.Write("Adj meg egy másik számot: ");
+            int szam2 = int.Parse(Console.ReadLine()!);
+
+
+        }
+        static void F32()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int szam = int.Parse(Console.ReadLine()!);
+
+        }
+        static void F36()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.WriteLine("OXOXOX");
+                }
+                else
+                {
+                    Console.WriteLine("XOXOXO");
+                }
+            }
+        }
+        static void F37()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int a = int.Parse(Console.ReadLine()!);
+            for (int i = 1; i <= a; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine();
+            }
+        }
+        static void F38() 
+        {
+            Console.Write("Adj meg egy számot: ");
+            int a = int.Parse(Console.ReadLine()!);
+
+            if (a < 1)
+            {
+                Console.WriteLine("Hiba, a számnak pozitívnak kell lennie!");
+                return;
+            }
+
+            for (int i = 1; i <= a; i++)
+            {
+                int space = a - i;
+                int csillagok = 2 * i - 1;
+                
+                Console.Write(new string(' ', space));
+                Console.WriteLine(new string('*', csillagok));
+            }
+        }
+        static void F39()
+        {
+            Console.Write("Adj meg egy számot: ");
+            int m = int.Parse(Console.ReadLine()!);
+
+            Console.Write("Adj meg egy másik számot: ");
+            int n = int.Parse(Console.ReadLine()!);
+
+            if (m < 2 || n < 2)
+            {
+                Console.WriteLine("Mindkét számnak legalább 2-nek kell lennie!");
+                return;
+            }
+            Console.WriteLine(new string('*', n));
+
+            for (int i = 0; i < m - 2; i++)
+            {
+                Console.Write("*");
+                Console.Write(new string(' ', n - 2));
+                Console.WriteLine("*");
+            }
+            Console.WriteLine(new string('*', n));
+        }
+        static void F40()
+        {
+            Console.Write("Adj meg egy egész számot: ");
+            int limit = int.Parse(Console.ReadLine()!);
+
+            if (limit < 1)
+            {
+                Console.WriteLine("Hiba, a számnak pozitívnak kell lennie!");
+                return;
+            }
+
+            Console.WriteLine("Tökéletes számok eddig:");
+            for (int n = 1; n <= limit; n++)
+            {
+                int sum = 0;
+                for (int i = 1; i < n; i++)
+                {
+                    if (n % i == 0)
+                        sum += i;
+                }
+                if (sum == n)
+                {
+                    Console.WriteLine(n);
+                }
+            }
+        }
 
         static void Main(string[] args) 
         {
-            F28();
+            F40();
         }
     }
 }
